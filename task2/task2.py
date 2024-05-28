@@ -1,7 +1,13 @@
 import math
-file1, file2 = input(), input()
-file1 = open(file1, "r")
-file2 = open(file2,"r")
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("file1", type=str, help="файл с координатами и радиусом окружности")
+parser.add_argument("file2", type=str, help="файл с координатами точек")
+args = parser.parse_args()
+
+file1 = open(args.file1, "r")
+file2 = open(args.file2,"r")
 
 xc, yc = file1.readline().split()
 xc, yc = float(xc), float(yc)
