@@ -1,5 +1,10 @@
-file = input()
-file = open(file, "r")
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('file', type=str, help='файл с элементами массива')
+args = parser.parse_args()
+
+
+file = open(args.file, "r")
 
 numbers = list(map(int, file.readlines()))
 
